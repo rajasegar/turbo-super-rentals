@@ -1,0 +1,14 @@
+<div class="rentals">
+  <label>
+    <span class="t1 mt-50 mx-auto mb-20 block italic font-140% text-center">Where would you like to stay?</span>
+    <Input @value={{this.query}} class="t1 p-11 font-18 w-500 mt-20 mx-auto mb-50 block bg-c-rgba-255-255-255-75 border-1-lightgray block" />
+  </label>
+
+  <ul class="t1 -mt-10">
+    <Rentals::Filter @rentals={{@rentals}} @query={{this.query}} as |results|>
+      {{#each results as |rental|}}
+        <li class="t1 py-10 px-15 hover:bg-c-hex-f3f3f3"><Rental @rental={{rental}} /></li>
+      {{/each}}
+    </Rentals::Filter>
+  </ul>
+</div>
